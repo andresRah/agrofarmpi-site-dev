@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head lang="es">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>AgroFarmPi</title>
+	<meta name="description" content="BlackTie.co - Free Handsome Bootstrap Themes" />	    
+	<meta name="keywords" content="themes, bootstrap, free, templates, bootstrap 3, freebie,">
+	<meta property="og:title" content="">
+	
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+	<link rel="stylesheet" type="text/css" href="vegas/jquery.vegas.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<link rel="prefetch" href="images/zoom.png">
+		
+	<script type="text/javascript" src="vegas/jquery.min.js"></script> 
+    <script type="text/javascript" src="vegas/jquery.vegas.js"></script> 
+
+    <script src="js/html5shiv.js"></script>
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>	
+  <div class="modal fade" id="myModal2">
+    <div class="modal-dialog" style="width: 70%;margin: 0px auto;left: 0px;">
+    <div class="modal-content">
+      <div class="modal-header">	
+        <h4 class="modal-title"><img src="images/raspberry.png">  Recuperar contraseña de acceso al sistema</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      		<div class="col-12">
+      			<div class="col-12 font-thin" align="center"><span class="font-semibold" style="font-size:20px">Completa los campos para recuperar la contraseña</span></div>
+      			<br/><br/>
+      			<form id="formulario4">
+      			  <div class="form-group" style="margin-bottom:5px">
+    			   <label for="correo_remember">Ingresa el correo electrónico</label>
+    			   <input type="email" class="form-control input-md" id="correo_remember" name="correo_remember" placeholder="Ingresa el correo electrónico" required>
+  				  </div>
+  				  <div class="form-group" style="margin-bottom:5px">
+    				<label for="correo_remember2">Confirma el correo electrónico</label>
+    				<input type="email" class="form-control input-md" id="correo_remember2" name="correo_remember2" placeholder="Confirma el correo electrónico" required>
+  				  </div>
+  				  <div class="form-group" style="margin-bottom:5px">
+    				<label for="pass_remember1">Nueva contraseña</label>
+    				<input type="password" class="form-control input-md" id="pass_remember1" name="pass_remember1" placeholder="Nueva contraseña" required>
+  				  </div>
+  				  <div class="form-group" style="margin-bottom:5px">
+    				<label for="pass_remember2">Confirma la nueva contraseña</label>
+    				<input type="password" class="form-control input-md" id="pass_remember2" name="pass_remember2" placeholder="Confirma la nueva contraseña" required>
+  				  </div>
+             <div class="alert alert-danger alert-dismissable" align="center" id="mensaje_sens">
+              <strong>¡Error!</strong> El correo electrónico suministrado no se encuentra registrado.
+            </div>
+            <br>
+            <!-- <div class="progress progress-striped">
+              <div class="progress-bar progress-bar-success" role="progressbar"aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+              <span class="sr-only">40% completado (éxito)</span>
+              </div>
+            </div> -->
+            <img src="vegas/images/loading.gif" id="img_cargando">
+  				  <br/>
+  				  <div align="center">
+  				   <input type="button" value="Aceptar" class="btn btn-default" id="btn_recuperarPass"/>
+  				  </div>
+  				</form>
+      		</div>
+      	</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <div class="modal fade" id="myModal23">
+    <div class="modal-dialog" style="width: 70%;margin: 0px auto;left: 0px;">
+    <div class="modal-content">
+      <div class="modal-header">  
+        <h4 class="modal-title"><img src="images/raspberry.png">  Recuperar contraseña de acceso al sistema</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="col-12 font-thin" align="center"><span class="font-semibold" style="font-size:20px">Se a enviado un mensaje a tu correo electrónico.</span></div><br><br>
+            <div align="center">
+              <a href="http://www.agrofarmpi.com" class="btn btn-primary" type="button">Aceptar</a>
+            </div>  
+            <br/><br/>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $('#img_cargando').hide().ajaxStart(function() {
+        $(this).show();
+    })
+    .ajaxStop(function() {
+        $(this).hide();
+    });
+   $("#mensaje_sens").hide();
+
+   $('#myModal2').modal({
+     backdrop: 'static',
+     keyboard: false
+   });
+
+   $("#btn_recuperarPass").click(function(){
+  	var log={
+  	  correo: $("#correo_remember").val(),
+      contrasena: $("#pass_remember1").val(),
+  	};
+
+  	var datos = JSON.stringify(log);
+    var form = $("#formulario4");
+    
+    $("#formulario4").validate({
+      rules: {
+        pass_remember1: {
+          required: true,
+          minlength: 6
+        },
+        pass_remember2: {
+        equalTo: "#pass_remember1"
+      },
+      correo_remember: "required",
+        correo_remember2: {
+        equalTo: "#correo_remember"
+      }
+    }});
+
+    if(form.valid()){
+      $.ajax({
+        type: 'POST',
+        url: 'contacto.php',
+        dataType: 'json',
+        data: 'recuperacion=' + encodeURIComponent(datos),
+        success: function(msg) {
+        if(msg==6){
+         document.getElementById('formulario4').reset();
+         $("#myModal2").modal("toggle");
+         $("#myModal23").modal("toggle");
+        }
+        else if(msg==7){
+          $("#mensaje_sens").modal("toggle");
+         }
+        },
+        error: function(xhr) {	
+        	console.log('registro fallo',xhr);
+        	$("#mensaje_sens").show();
+        }
+       });
+   	  }
+  });
+
+  $("#correo_remember").on("focus",function(){
+  $("#mensaje_sens").hide();
+  });
+
+  $("#correo_remember2").on("focus",function(){
+  $("#mensaje_sens").hide();
+  });
+
+  $("#pass_remember1").on("focus",function(){
+  $("#mensaje_sens").hide();
+  });
+
+  $("#pass_remember2").on("focus",function(){
+  $("#mensaje_sens").hide();
+  });
+
+ $.vegas('slideshow', {
+  backgrounds:[
+    { src:'images/bg4.jpg', fade:1000 },
+    { src:'images/bg2.jpg', fade:1000 },
+    { src:'images/bg3.jpg', fade:1000 },
+    { src:'images/bg5.jpg', fade:1000 },
+    { src:'images/bg6.jpg', fade:1000 },
+    { src:'images/bg7.jpg', fade:1000 },
+    { src:'images/bg8.jpg', fade:1000 },
+    { src:'images/bg9.jpg', fade:1000 },
+    { src:'images/bg10.jpg', fade:1000 }
+  ]
+})('overlay', {
+  src:'/vegas/overlays/11.png'
+});
+});
+</script>
+</body>	
+</html>

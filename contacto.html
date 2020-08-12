@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="contacto.php" method="post">
+<label for="nombre">Nombre:</label>
+ <input id="nombre" type="text" name="nombre" placeholder="Nombre y Apellido" required="" />
+ <label for="email">Email:</label>
+ <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" required="" />
+ <label for="mensaje">Mensaje:</label>
+ <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required=""></textarea>
+ <input id="submit" type="submit" name="submit" value="Enviar" />
+</form>
+"<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: mail(): Failed to connect to mailserver at &amp;quot;localhost&amp;quot; port 25, verify your &amp;quot;SMTP&amp;quot; and &amp;quot;smtp_port&amp;quot; setting in php.ini or use ini_set() in C:\wamp\www\AgrofarmPi\contacto.php on line <i>14</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0004</td><td bgcolor='#eeeeec' align='right'>253840</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp\www\AgrofarmPi\contacto.php' bgcolor='#eeeeec'>..\contacto.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0004</td><td bgcolor='#eeeeec' align='right'>256536</td><td bgcolor='#eeeeec'><a href='http://www.php.net/function.mail' target='_new'>mail</a>
+(  )</td><td title='C:\wamp\www\AgrofarmPi\contacto.php' bgcolor='#eeeeec'>..\contacto.php<b>:</b>14</td></tr>
+</table></font>
+Falló el envio"
+</body>
+</html>
